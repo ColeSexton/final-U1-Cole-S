@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./reuse/Header";
+import Footer from "./reuse/Footer";
 const MainPage = () =>{
 
 
@@ -18,6 +19,8 @@ const MainPage = () =>{
                     <button>Generator</button>
 
                 </section>
+
+                <Footer/>
         
         </div>
     )
