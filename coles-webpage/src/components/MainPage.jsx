@@ -7,20 +7,26 @@ const MainPage = () =>{
 
     return(
         <div className="mainPage">
-                <Header />
+    
 
             <div id="welcome">
                 <h1>Welcome!</h1>
             </div>
+    
 
                 <section id="mainButtons">
-                    <button>About Me</button>
-                    <button>Song</button>
-                    <button>Generator</button>
+                    <button id="aboutMe"><Link to={'/Bio'} style={{textDecoration: 'none', color: 'black'}}>About Me</Link></button>
+                    <span className="hide">Learn more about me and this page!</span>
+
+                    <button id="song"><Link to={'/SongForm'} style={{textDecoration: 'none', color: 'black'}}>Song</Link></button>
+                    <span className="hide">I will write you a song, click me!</span>
+
+                    <button id="gen"><Link to={'/Generator'} style={{textDecoration: 'none', color: 'black'}}>Generator</Link></button>
+                    <span className="hide">Stuck creatively? I can help!</span>
 
                 </section>
 
-                <Footer/>
+                <footer><Footer/></footer>
         
         </div>
     )
