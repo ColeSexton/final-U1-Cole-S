@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { FaGuitar, FaMicrophone } from "react-icons/fa";
+import { GiDrumKit, GiGuitarBassHead, GiGuitar, GiGrandPiano, GiPianoKeys, GiTambourine  } from "react-icons/gi";
+import { BiSolidPiano } from "react-icons/bi";
+import { LuGuitar } from "react-icons/lu";
 
 const SongForm = () =>{
 const [formData, setFormData] = useState({
@@ -28,6 +32,19 @@ const formatLabels = {
   "cd": "CD",
   "tape": "Cassette Tape"
 };
+
+const instrumentIcons ={
+    acoustic: <FaGuitar size={40} />,
+    electric: <GiGuitar size={40} />,
+    bass: <GiGuitarBassHead size={40} />,
+    mandolin: <LuGuitar size={40} />,
+    piano: <GiGrandPiano size={40} />,
+    keyboard: <GiPianoKeys size={40} />,
+    synth: <BiSolidPiano size={40} />,
+    drums: <GiDrumKit size={40}/>,
+    percussion: <GiTambourine size={40}/>,
+    vocal: <FaMicrophone size={40} />
+}
 
 
 
@@ -79,7 +96,7 @@ const handleChange = (e) =>{
             <hr/>
 
             <label for="title">Title:
-            <textarea type="text" id="title" name="title" rows="1" cols="30" maxLength="100" placeholder="Enter a title or put working" ></textarea>
+            <textarea type="text" id="title" name="title" rows="1" cols="30" maxLength="100" placeholder="Enter a title or put working" value={formData.title} onChange={handleChange}></textarea>
             </label>
             <br />
 
@@ -299,10 +316,37 @@ const handleChange = (e) =>{
                          </label>
                     ))}
             </fieldset>
+
+            <button>Submit</button>
             </form>
 
             <div>
                 <h3>Your Song:</h3>
+                <p>Title: {formData.title}</p>
+                <p>Genre: {formData.genre}</p>
+                <p>Style: {formData.style}</p>
+                    
+                    <div className="previewInstruments">
+                    Instruments: <br />
+                    {formData.instruments.map((instrument)=>(
+                        <span className="instrument-icon" key={instrument} style={{marginRight: "10px"}}>
+                            {instrumentIcons[instrument] || instrument}
+                             <div className="instrument-label">{instrument}</div>
+                        </span>
+                    ))}
+
+                    </div>
+
+                {formData.lyricsIncluded === "yes" && <p>Lyrics: {formData.lyricsText}</p> }
+
+                <p>Length: {formData.length}</p>
+
+                {formData.forSomeone === "yes" && <p>This is for: {formData.forSomeoneExplain}</p>}
+
+                <p>Emotions: {formData.emotions}</p>
+                <p>Additional Info: {formData.extraInfo}</p>
+                <p>Deliverable: {formData.bounce.join(" ")}</p>
+                
             </div>
         </div>
     )   
