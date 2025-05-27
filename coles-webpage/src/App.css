@@ -1,35 +1,4 @@
 
-footer{
-    color:rgb(204, 202, 199);
-    background-color: #5b0f5b;
-    border-top: 2px solid #6b6b6b;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 20px;
-}
-#footerCenter{
-    display: flex;
-    justify-content: center;
-}
-#footerLeft{
-    display: flex;
-    justify-content: left;
-   
-
-}
-#footerRight{
-    display: flex;
-    justify-content: right;
-    margin-right: 100px;
-    margin-bottom: 10px;
-}
-
-
-
-
-
-
 
 .mainPage{
     background-color: black;
@@ -144,7 +113,7 @@ footer{
 
 
 #profilePic{
-    display:block ;
+display:block ;
 margin: auto;
 width: 350px;
 height: auto;

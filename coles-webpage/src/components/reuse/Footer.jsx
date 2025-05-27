@@ -1,14 +1,14 @@
-
+import './Footer.css'
 const Footer = () =>{
     return(
          <footer >
-            <p id="footerLeft"><img src=""/>LOGO</p>
-            <p id="footerCenter">This is the Footer</p>
+            <div id="footerLeft"><img src="/b3.png"/></div>
+            <div id="footerCenter"> &#169; Cole's Audio and Creative Services LLC </div>
             
-            <p id="footerRight">
-            <i class="fa-brands fa-instagram"> <i class="fa-brands fa-spotify"> <i class="fa-brands fa-bandcamp"></i></i></i> 
+            <div id="footerRight">
+            <i className="fa-brands fa-instagram fa-2x"> <i className="fa-brands fa-spotify"> <i className="fa-brands fa-bandcamp"></i></i></i> 
 
-             </p>
+             </div>
             
             
         </footer>

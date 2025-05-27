@@ -1,4 +1,5 @@
 import Header from "./reuse/Header";
+import Footer from "./reuse/Footer"
 
 const Generator = () =>{
 
@@ -12,6 +13,7 @@ const Generator = () =>{
             <div>
                 <p>THIS IS ADIVCE</p>
             </div>
+            <Footer />
         </div>
     )
 
