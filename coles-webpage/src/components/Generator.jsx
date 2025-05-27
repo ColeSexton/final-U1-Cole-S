@@ -1,7 +1,10 @@
+import Header from "./reuse/Header";
+
 const Generator = () =>{
 
     return(
         <div>
+        <Header />
             <div>
                 <button>PRESS ME</button>
             </div>

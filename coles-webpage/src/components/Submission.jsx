@@ -1,8 +1,11 @@
 import SongForm from "./SongForm";
+import Header from "./reuse/Header";
+
 
 const Submission = () =>{
     return(
         <div className="submitPage">
+        <Header />
 
             <div>
                 <h2>SUBMITTED SUCCESSFULLY</h2>

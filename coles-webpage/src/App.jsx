@@ -6,6 +6,8 @@ import Bio from './components/Bio';
 import SongForm from './components/SongForm';
 import Generator from './components/Generator';
 import Submission from './components/Submission';
+import Header from "./components/reuse/Header";
+
 
 function App() {
 

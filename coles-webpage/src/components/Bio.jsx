@@ -8,7 +8,7 @@ const Bio = () =>{
         <div>
             <Header/>
 
-            <img id="profilePic" src= "/profilePIC.jpg"/>
+            <img id="profilePic" src= "/profilePIC.jpg" alt="Cole in Colorado, in front of mountains."/>
          
 
             <p id="bioP">

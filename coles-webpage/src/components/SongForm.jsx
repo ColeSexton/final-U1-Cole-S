@@ -6,6 +6,8 @@ import { LuGuitar } from "react-icons/lu";
 import "./SongForm.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import Header from "./reuse/Header";
+
 
 const SongForm = () =>{
 const [formData, setFormData] = useState({
@@ -85,7 +87,10 @@ const handleSubmit = (event) => {
 
 
     return(
+        <>
+        <Header />
         <div className="songForm"> 
+
             <h1>Song Form</h1>
 
             <form className="formSelection" onSubmit={handleSubmit}>
@@ -361,6 +366,7 @@ const handleSubmit = (event) => {
 
             </div>
         </div>
+        </>
     )   
 
 }  
