@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Footer from "./reuse/Footer";
 import Header from "./reuse/Header";
+import { FaYoutube } from "react-icons/fa";
 
 const Bio = () =>{
 
@@ -25,10 +26,12 @@ const Bio = () =>{
                         <h3>Links to my Music</h3>
                         <br />
                         <Link to={'https://colesexton.bandcamp.com/album/before-the-people'} target="_blank">
-                         <i class="fa-brands fa-bandcamp" />   
+                         <i className="fa-brands fa-bandcamp fa-2x" />   
                         </Link> 
 
-                        <Link><i class="fa-brands fa-spotify" /></Link>
+                        <Link to={'https://open.spotify.com/artist/4ZsyQ1tTX0Fqz6PrUw2MsW'} target="_blank"><i className="fa-brands fa-spotify fa-2x" /></Link>
+
+                        <Link to={'https://www.youtube.com/watch?v=LZc4Tk4U1_M&list=OLAK5uy_m34yo8HtKXGJtFsrj5ygXFrp4UA9RtRw0'} target="_blank"><i className="fa-brands fa-youtube fa-2x" /></Link>
                     </p>
 
                    

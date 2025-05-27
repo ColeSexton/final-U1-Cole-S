@@ -1,6 +1,6 @@
 import SongForm from "./SongForm";
 import Header from "./reuse/Header";
-
+import Footer from "./reuse/Footer"
 
 const Submission = () =>{
     return(
@@ -19,6 +19,7 @@ const Submission = () =>{
                 If you have more questions, reach out to me via email
 
             </section>
+            <Footer />
         </div>
     )
 
