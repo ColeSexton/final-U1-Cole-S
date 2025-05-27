@@ -17,7 +17,7 @@ function App() {
         <Route path='/Bio' element={<Bio/>}/>
         <Route path='/SongForm' element={<SongForm/>}/>
         <Route path='/Generator' element={<Generator/>}/>
-        <Route path='/SongForm/Submission' element={<Submission/>}/>
+        <Route path='/Submission' element={<Submission/>}/>
       </Routes>
     </Router>
     </>

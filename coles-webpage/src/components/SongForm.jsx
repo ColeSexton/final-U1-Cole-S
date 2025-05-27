@@ -3,6 +3,9 @@ import { FaGuitar, FaMicrophone } from "react-icons/fa";
 import { GiDrumKit, GiGuitarBassHead, GiGuitar, GiGrandPiano, GiPianoKeys, GiTambourine  } from "react-icons/gi";
 import { BiSolidPiano } from "react-icons/bi";
 import { LuGuitar } from "react-icons/lu";
+import "./SongForm.css";
+import { Link, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const SongForm = () =>{
 const [formData, setFormData] = useState({
@@ -71,13 +74,21 @@ const handleChange = (e) =>{
 }
 }
 
+const navigate =useNavigate();
+
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/Submission");
+};
+
 
 
     return(
         <div className="songForm"> 
             <h1>Song Form</h1>
 
-            <form>
+            <form className="formSelection" onSubmit={handleSubmit}>
 
             <label for="name"> Name: 
             <input type="text" id="name" name="name" placeholder= "John Doe" value={formData.name} onChange={handleChange} required></input>
@@ -90,18 +101,18 @@ const handleChange = (e) =>{
             <br />
 
             <label for="phone">Phone:
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" value={formData.phone} onChange={handleChange}></input>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" value={formData.phone} onChange={handleChange} required></input>
             </label>
 
             <hr/>
 
             <label for="title">Title:
-            <textarea type="text" id="title" name="title" rows="1" cols="30" maxLength="100" placeholder="Enter a title or put working" value={formData.title} onChange={handleChange}></textarea>
+            <textarea type="text" id="title" name="title" rows="1" cols="30" maxLength="100" placeholder="Enter a title or put working" value={formData.title} onChange={handleChange} required></textarea>
             </label>
             <br />
 
             <label for="genre">Genre:
-                <select id="genre" name="genre" value={formData.genre} onChange={handleChange}>
+                <select id="genre" name="genre" value={formData.genre} onChange={handleChange} required>
                 <option value="">select genre</option>
                 <option value="pop">Pop</option>
                 <option value="rock">Rock</option>
@@ -114,11 +125,11 @@ const handleChange = (e) =>{
             <br />
 
             <label for="style">Style: <br />
-            <textarea type="text" id="style" name="style" rows="4" cols="40" maxLength="400" placeholder="Eleborate on more specific genres. Feel free to use standards like Classic Rock, or create your own and be descriptive " value={formData.style} onChange={handleChange}></textarea>
+            <textarea type="text" id="style" name="style" rows="4" cols="40" maxLength="400" placeholder="Eleborate on more specific genres. Feel free to use standards like Classic Rock, or create your own and be descriptive " value={formData.style} onChange={handleChange} required></textarea>
             </label>
             <br />
             
-            <fieldset className="insBoxes">
+            <fieldset className="insBoxes" required>
 
             <legend>Instruments </legend>
             
@@ -247,13 +258,13 @@ const handleChange = (e) =>{
                 maxLength="400" 
                 placeholder="Type ideas, poems, lyrics, or say that you want me to write lyrics about soemthing!"
                 value={formData.lyricsText} 
-                onChange={handleChange}></textarea>
+                onChange={handleChange} required></textarea>
                 )}
             </fieldset>
 
             <label for="length">
             Length: 
-            <input type="number" id="length" name="length" placeholder="desired length in seconds" value={formData.length} onChange={handleChange} ></input>
+            <input type="number" id="length" name="length" placeholder="desired length in seconds" value={formData.length} onChange={handleChange} required ></input>
             </label>
 
             <fieldset>
@@ -280,14 +291,14 @@ const handleChange = (e) =>{
                         placeholder="Who is this song for? this can be a person, group, or project. Please explain!"
                         value={formData.forSomeoneExplain}
                         onChange={handleChange}
-                        ></textarea>
+                        required></textarea>
                     )}
             </fieldset>
             
             <label for="emotions">
                 Emotions:
                 <br />
-              <textarea type="text" id="emotions" name="emotions" rows="6" cols="20" maxLength="500" placeholder="List some emotions you want to be conveyed" value={formData.emotions} onChange={handleChange}></textarea>
+              <textarea type="text" id="emotions" name="emotions" rows="6" cols="20" maxLength="500" placeholder="List some emotions you want to be conveyed" value={formData.emotions} onChange={handleChange} required></textarea>
             </label>
             <br />
 
@@ -300,11 +311,11 @@ const handleChange = (e) =>{
 
             </label>
             
-            <fieldset>
+            <fieldset required>
                 <legend>How would you like the song delivered to you?</legend>
 
                     {bounceOptions.map((option) => (
-                    <label key={option}>
+                    <label key={option}>  
                         <input
                         type="checkbox"
                         name="bounce"
@@ -317,21 +328,22 @@ const handleChange = (e) =>{
                     ))}
             </fieldset>
 
-            <button>Submit</button>
+            <button type="submit" id="submitButton">Submit</button>
+
             </form>
 
-            <div>
+            <div className="previewSelection">
                 <h3>Your Song:</h3>
-                <p>Title: {formData.title}</p>
+                <p id="titleP">Title: {formData.title}</p>
                 <p>Genre: {formData.genre}</p>
                 <p>Style: {formData.style}</p>
                     
                     <div className="previewInstruments">
                     Instruments: <br />
                     {formData.instruments.map((instrument)=>(
-                        <span className="instrument-icon" key={instrument} style={{marginRight: "10px"}}>
+                        <span className="instrumentIcon" key={instrument} style={{marginRight: "10px"}}>
                             {instrumentIcons[instrument] || instrument}
-                             <div className="instrument-label">{instrument}</div>
+                             <div className="instrumentLabel">{instrument}</div>
                         </span>
                     ))}
 
@@ -339,14 +351,14 @@ const handleChange = (e) =>{
 
                 {formData.lyricsIncluded === "yes" && <p>Lyrics: {formData.lyricsText}</p> }
 
-                <p>Length: {formData.length}</p>
+                <p>Length: {formData.length} seconds</p>
 
                 {formData.forSomeone === "yes" && <p>This is for: {formData.forSomeoneExplain}</p>}
 
                 <p>Emotions: {formData.emotions}</p>
                 <p>Additional Info: {formData.extraInfo}</p>
                 <p>Deliverable: {formData.bounce.join(" ")}</p>
-                
+
             </div>
         </div>
     )   
