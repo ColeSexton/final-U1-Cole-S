@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css" ;
-
+import RotatingLinks from './RotatingLinks';
 const Header = () =>{
     return(
         <nav className="navbar">
@@ -18,7 +18,9 @@ const Header = () =>{
             </div>
             
             <div className="navbar-right">
-                
+            <span>Check out new music!</span>
+            <RotatingLinks />
+
             </div>
 
         </nav>
