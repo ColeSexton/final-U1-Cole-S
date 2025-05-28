@@ -7,18 +7,18 @@ const Generator = () =>{
     const [selectedCategory, setSelectedCategory] = useState("");
 
     return(
-        <div className="generator">
+        <div >
         <Header />
-            <div>
-            <h2>Choose a category for advice</h2>
+            <div className="generator">
+            <h2 id="genH2">Choose a category for advice</h2>
 
-                <div>
-                    <button onClick={()=> setSelectedCategory("music")}>Music</button>
-                    <button onClick={() => setSelectedCategory("poems")}>Poems</button>
-                    <button onClick={() => setSelectedCategory("creativity")}>Creativity Quotes</button>
+                <div className="categoryButtons">
+                    <button className={`categoryButton ${selectedCategory === 'music' ? 'active':''}`} onClick={()=> setSelectedCategory("music")}>Music</button>
+                    <button className={`categoryButton ${selectedCategory === 'poems' ? 'active':''}`} onClick={() => setSelectedCategory("poems")}>Poems</button>
+                    <button className={`categoryButton ${selectedCategory === 'creativity' ? 'active':''}`} onClick={() => setSelectedCategory("creativity")}>Creativity Quotes</button>
                 </div>
 
-                <span><AdviceBox category={selectedCategory}/></span>
+                <span className="adviceDisplay"><AdviceBox category={selectedCategory}/></span>
 
             </div>
             <Footer />

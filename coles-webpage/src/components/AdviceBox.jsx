@@ -23,7 +23,7 @@ const AdviceBox = ({category}) => {
 
     return(
         <div className="adviceBox">
-        <button onClick={showRandomAdvice}>Click Me!</button>
+        <button onClick={showRandomAdvice} className="adviceButton">Click Me!</button>
         {currentAdvice && <p>{currentAdvice.description}</p>}
 
         </div>
