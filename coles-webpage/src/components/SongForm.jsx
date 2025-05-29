@@ -4,28 +4,29 @@ import { GiDrumKit, GiGuitarBassHead, GiGuitar, GiGrandPiano, GiPianoKeys, GiTam
 import { BiSolidPiano } from "react-icons/bi";
 import { LuGuitar } from "react-icons/lu";
 import "./SongForm.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Header from "./reuse/Header";
 
 
 const SongForm = () =>{
+const location =useLocation();
 const [formData, setFormData] = useState({
-    name: "",
-    email:"",
-    phone:"",
-    title:"",
-    genre:"",
-    style:"",
-    instruments:[],
-    lyricsIncluded:"",
-    lyricsText:"",
-    length:"",
-    forSomeone:"",
-    forSomeoneExplain:"",
-    emotions:"",
-    extraInfo:"",
-    bounce:[]
+    name: location.state?.name || "",
+    email: location.state?.email || "",
+    phone:location.state?.phone || "",
+    title: location.state?.title || "",
+    genre: location.state?.genre ||"",
+    style: location.state?.style ||"",
+    instruments: location.state?.instruments ||[],
+    lyricsIncluded: location.state?.lyricsIncluded || false,
+    lyricsText: location.state?.lyricsText ||"",
+    length: location.state?.length || "",
+    forSomeone: location.state?.forSomeone || false,
+    forSomeoneExplain: location.state?.forSomeoneExplain ||"",
+    emotions: location.state?.emotions ||"",
+    extraInfo: location.state?.extraInfo ||"",
+    bounce:location.state?.bounce || []
 
 });
 
@@ -81,7 +82,11 @@ const navigate =useNavigate();
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    navigate("/Submission");
+    navigate("/Submission", {
+        state: formData
+    });
+
+
 };
 
 

@@ -15,7 +15,18 @@
     border-width: 20px;
     border-style:double;
     border-top: 20px;
+    animation-name: colorChange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 
+}
+
+@keyframes colorChange {
+    0% {border-color: #5b0f5b;}
+    25% {border-color: rgb(12, 30, 190);}
+    50% {border-color: darkgreen;}
+    100% {border-color: #5b0f5b;}
+    
 }
 
 
@@ -34,6 +45,11 @@
     display: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: larger;
+}
+
+.mainGif{
+    display: flex;
+    justify-content: center;
 }
 
 #aboutMe{
@@ -122,6 +138,51 @@ height: auto;
 
 .submitPage{
     color: #6b6b6b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.subTable{
+margin-top: 40px;
+font-size: larger;
+font-weight: bold;
+}
+
+.editDetails{
+    margin-top: 20px;
+}
+
+.nextSteps{
+    margin-top: 30px;
+}
+
+
+.animatedArrow{
+    font-size: 1rem;
+    margin: 1rem;
+    animation: sideArrow 2s infinite, colorArrow 2s infinite alternate;
+     
+}
+@keyframes sideArrow {
+    0%, 100%{
+        transform: translateX(0)
+        
+    }
+    50%{
+        transform: translateX(8px);
+    }
+}
+
+@keyframes colorArrow{
+    0%{
+        color: #6b6b6b;
+    }
+    50%{
+        color: #5b0f5b;
+    }
 }
 
 
@@ -205,3 +266,5 @@ height: auto;
     }
     
 }
+
+

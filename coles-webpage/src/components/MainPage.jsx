@@ -26,7 +26,10 @@ const MainPage = () =>{
 
                 </section>
 
-                <footer><Footer/></footer>
+                <div className="mainGif"><img src="https://media1.giphy.com/media/4VWs1GcTDQLtXPuqxM/source.gif" alt="Bass guitar gif"></img>
+                </div>
+
+            
         
         </div>
     )

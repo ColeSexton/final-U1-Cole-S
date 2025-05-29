@@ -1,26 +1,73 @@
-import SongForm from "./SongForm";
+
 import Header from "./reuse/Header";
 import Footer from "./reuse/Footer"
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Submission = () =>{
+    const location = useLocation();
+    const navigate = useNavigate();
+    const formData = location.state || {};
+
+    const handleEdit = () => {
+        navigate('/SongForm', {
+            state: formData
+        });
+    };
+
     return(
-        <div className="submitPage">
+        <>
         <Header />
+        <div className="submitPage">
+        
 
             <div>
-                <h2>SUBMITTED SUCCESSFULLY</h2>
+                <h2>SONG SUBMITTED SUCCESSFULLY</h2>
             </div>
 
-            <section>
+            <p>
                 Congrats, you submitted the Song Form!
-                I will reach out to you via the email you provided
-                to give you an invoice, and outline the next steps in the 
-                optional revision of your song!
-                If you have more questions, reach out to me via email
+            </p>
 
-            </section>
-            <Footer />
+                <div>
+
+                <table className="subTable">
+                    <caption>Contact Details</caption>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                    <tr>
+                        <td>{formData.name}</td>
+                        <td>{formData.email}</td>
+                        <td>{formData.phone}</td>
+                    </tr>
+                </table>
+
+                    <div className="editDetails">
+                    Click to edit details  <i className="fas fa-arrow-right animatedArrow"></i>
+                    <button onClick={handleEdit}>Edit</button>
+                    </div>
+
+                </div>
+
+                <div className="nextSteps">
+                    <p>Next Steps</p>
+                    <ul>
+                        <li>I will email you with an invoice</li>
+                        <li>I will write the song, and email you a copy to review</li>
+                        <li>I will revise the song and give you the final copies</li>
+                    </ul>
+                    
+                </div>
+
+
+                
+            
         </div>
+        <Footer />
+        </>
     )
 
 }
