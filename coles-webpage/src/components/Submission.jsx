@@ -27,7 +27,6 @@ const Submission = () =>{
             <p>
                 Congrats, you submitted the Song Form!
             </p>
-
                 <div>
 
                 <table className="subTable">
@@ -47,7 +46,7 @@ const Submission = () =>{
 
                     <div className="editDetails">
                     Click to edit details  <i className="fas fa-arrow-right animatedArrow"></i>
-                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleEdit} className="editButton">Edit</button>
                     </div>
 
                 </div>
@@ -61,6 +60,8 @@ const Submission = () =>{
                     </ul>
                     
                 </div>
+
+                
 
 
                 

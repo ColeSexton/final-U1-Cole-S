@@ -142,17 +142,37 @@ height: auto;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .subTable{
 margin-top: 40px;
 font-size: larger;
 font-weight: bold;
+border-collapse: collapse;
+width: 100%;
+}
+
+.subTable td{
+    border: 2px solid #5b0f5b;
+}
+
+.subTable th{
+    color: #5b0f5b;
 }
 
 .editDetails{
     margin-top: 20px;
+}
+
+.editButton{
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #5b0f5b;
+  background-color:#6b6b6b;
+  color: #5b0f5b;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .nextSteps{

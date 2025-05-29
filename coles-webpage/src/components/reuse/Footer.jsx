@@ -6,7 +6,9 @@ const Footer = () =>{
             <div id="footerCenter"> &#169; Cole's Audio and Creative Services LLC </div>
             
             <div id="footerRight">
-            <i className="fa-brands fa-instagram fa-2x"> <i className="fa-brands fa-spotify"> <i className="fa-brands fa-bandcamp"></i></i></i> 
+            <a href={'https://open.spotify.com/artist/4ZsyQ1tTX0Fqz6PrUw2MsW'} target="_blank"><i className="fa-brands fa-spotify fa-2x" id='bioLinks'/></a>
+ 
+            <a href={'https://colesexton.bandcamp.com/album/before-the-people'} target="_blank"><i className="fa-brands fa-bandcamp fa-2x" id='bioLinks' /></a> 
 
              </div>
             

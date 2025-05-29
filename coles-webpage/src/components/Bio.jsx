@@ -25,13 +25,14 @@ const Bio = () =>{
                     <p>
                         <h3>Links to my Music</h3>
                         <br />
-                        <Link to={'https://colesexton.bandcamp.com/album/before-the-people'} target="_blank">
+                        
+                        <a href={'https://colesexton.bandcamp.com/album/before-the-people'} target="_blank">
                          <i className="fa-brands fa-bandcamp fa-2x" />   
-                        </Link> 
+                        </a> 
 
-                        <Link to={'https://open.spotify.com/artist/4ZsyQ1tTX0Fqz6PrUw2MsW'} target="_blank"><i className="fa-brands fa-spotify fa-2x" /></Link>
+                        <a href={'https://open.spotify.com/artist/4ZsyQ1tTX0Fqz6PrUw2MsW'} target="_blank"><i className="fa-brands fa-spotify fa-2x" /></a>
 
-                        <Link to={'https://www.youtube.com/watch?v=LZc4Tk4U1_M&list=OLAK5uy_m34yo8HtKXGJtFsrj5ygXFrp4UA9RtRw0'} target="_blank"><i className="fa-brands fa-youtube fa-2x" /></Link>
+                        <a href={'https://www.youtube.com/watch?v=LZc4Tk4U1_M&list=OLAK5uy_m34yo8HtKXGJtFsrj5ygXFrp4UA9RtRw0'} target="_blank"><i className="fa-brands fa-youtube fa-2x" /></a>
                     </p>
 
                    
