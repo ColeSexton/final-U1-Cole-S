@@ -288,3 +288,8 @@ width: 100%;
 }
 
 
+@media (max-width: 800px){
+    .generator{
+        flex-direction: column;
+    }
+}
